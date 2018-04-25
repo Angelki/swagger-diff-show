@@ -48,7 +48,6 @@ export default class DiffList extends Component {
 
   render() {
     const {
-      diffData,
       infoMessages,
       warningMessages,
       errorMessages,
@@ -59,7 +58,7 @@ export default class DiffList extends Component {
     // if (diffData !== []) console.log(diffData[0].infos.message);
     const columns = [
       {
-        title: "Number",
+        title: "最近五次",
         dataIndex: "number"
       },
       {
@@ -71,53 +70,56 @@ export default class DiffList extends Component {
         className: "warnings",
         dataIndex: "warnings"
       },
-      {
-        title: "Errors",
-        dataIndex: "errors"
-      },
+      // {
+      //   title: "Errors",
+      //   dataIndex: "errors"
+      // },
       {
         title: "unmatchDiffs",
         dataIndex: "unmatchDiffs"
       }
     ];
-    // let newList = [];
-    // diffData.map(item => {
-    //   let newItem = {
-    //     key: "test",
-    //     number: "API有改动",
-    //     infos: ,
-    //     warnings: ,
-    //     errors: ,
-    //     unmatchDiffs:
-    //   };
-    //   newList.unshift(newItem);
-    // });
-    // console.log(newList);
 
     const data = [
       {
         key: "1",
-        number: "API有改动",
-        infos: "￥300,000.00",
-        warnings: "New York No. 1 Lake Park",
-        errors: "New York No. 1 Lake Park",
-        unmatchDiffs: "New York No. 1 Lake Park"
+        number: "最近",
+        infos: infoMessages[0],
+        warnings: warningMessages[0],
+        errors: errorMessages[0],
+        unmatchDiffs: unmatchPaths[0]
       },
       {
         key: "2",
-        number: "API有改动",
-        infos: "￥300,000.00",
-        warnings: "New York No. 1 Lake Park",
-        errors: "New York No. 1 Lake Park",
-        unmatchDiffs: "New York No. 1 Lake Park"
+        number: "2",
+        infos: infoMessages[1],
+        warnings: warningMessages[1],
+        errors: errorMessages[1],
+        unmatchDiffs: unmatchPaths[1]
       },
       {
         key: "3",
-        number: "API有改动",
-        infos: "￥300,000.00",
-        warnings: "New York No. 1 Lake Park",
-        errors: "New York No. 1 Lake Park",
-        unmatchDiffs: "New York No. 1 Lake Park"
+        number: "3",
+        infos: infoMessages[2],
+        warnings: warningMessages[2],
+        errors: errorMessages[2],
+        unmatchDiffs: unmatchPaths[2]
+      },
+      {
+        key: "4",
+        number: "4",
+        infos: infoMessages[3],
+        warnings: warningMessages[3],
+        errors: errorMessages[3],
+        unmatchDiffs: unmatchPaths[3]
+      },
+      {
+        key: "5",
+        number: "5",
+        infos: infoMessages[4],
+        warnings: warningMessages[4],
+        errors: errorMessages[4],
+        unmatchDiffs: unmatchPaths[4]
       }
     ];
 
