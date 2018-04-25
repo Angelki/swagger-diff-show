@@ -15,9 +15,10 @@
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000",
+
   "devDependencies": {
     "babel-plugin-import": "^1.7.0",
     "react-app-rewired": "^1.5.2"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

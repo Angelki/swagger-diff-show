@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import { Table } from "antd";
+import axios from "axios";
+
 export default class DiffList extends Component {
+  componentWillMount() {
+    axios
+      .get("api/diffs/")
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
+  }
+
   render() {
     const columns = [
       {
