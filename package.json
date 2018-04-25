@@ -1,0 +1,24 @@
+{
+  "name": "swagger-listen",
+  "version": "1.0.0",
+  "description": "swagger listenner",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Angelki",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "moment": "^2.22.1",
+    "nodemailer": "^4.6.4",
+    "swagger-diff": "^0.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
