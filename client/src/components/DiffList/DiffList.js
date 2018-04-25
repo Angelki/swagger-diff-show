@@ -54,8 +54,6 @@ export default class DiffList extends Component {
       unmatchPaths
     } = this.state;
     console.log(infoMessages);
-    // console.log(typeof diffData);
-    // if (diffData !== []) console.log(diffData[0].infos.message);
     const columns = [
       {
         title: "最近五次",
@@ -89,6 +87,7 @@ export default class DiffList extends Component {
         errors: errorMessages[0],
         unmatchDiffs: unmatchPaths[0]
       },
+
       {
         key: "2",
         number: "2",
