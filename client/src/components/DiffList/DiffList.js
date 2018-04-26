@@ -20,13 +20,13 @@ export default class DiffList extends Component {
     return (
       <div>
         <h1>{created[dataIndex]}--API变更</h1>
-        <WarningTable
-          warningMessages={warningMessages}
+        <InfoTable
+          infoMessages={infoMessages}
           created={created}
           dIndex={dataIndex}
         />
-        <InfoTable
-          infoMessages={infoMessages}
+        <WarningTable
+          warningMessages={warningMessages}
           created={created}
           dIndex={dataIndex}
         />

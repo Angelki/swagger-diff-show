@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Table, Badge, Menu, Dropdown, Icon } from "antd";
+import { Table } from "antd";
 import axios from "axios";
 import DiffList from "./DiffList";
-import "./styles.css";
 
 export default class DecoList extends Component {
   state = {
@@ -76,10 +75,10 @@ export default class DecoList extends Component {
 
     return (
       <Table
-        className="components-table-demo-nested"
         columns={columns}
         expandedRowRender={expandedRowRender}
         dataSource={list}
+        defaultExpandedRowKeys={[0]}
       />
     );
   }

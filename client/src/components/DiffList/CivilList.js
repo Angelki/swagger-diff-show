@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Table, Badge, Menu, Dropdown, Icon } from "antd";
+import { Table } from "antd";
 import axios from "axios";
 import DiffList from "./DiffList";
-import "./styles.css";
 
 export default class CivilList extends Component {
   state = {
@@ -80,6 +79,7 @@ export default class CivilList extends Component {
         columns={columns}
         expandedRowRender={expandedRowRender}
         dataSource={list}
+        defaultExpandedRowKeys={[0]}
       />
     );
   }

@@ -3,7 +3,7 @@ import { Table } from "antd";
 
 export default class ErrTable extends Component {
   render() {
-    const { errorMessages, created, dIndex } = this.props;
+    const { errorMessages, dIndex } = this.props;
     const columns = [
       {
         title: "ruleId",

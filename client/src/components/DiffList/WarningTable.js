@@ -3,7 +3,7 @@ import { Table } from "antd";
 
 export default class WarningTable extends Component {
   render() {
-    const { warningMessages, created, dIndex } = this.props;
+    const { warningMessages, dIndex } = this.props;
     const columns = [
       {
         title: "ruleId",
