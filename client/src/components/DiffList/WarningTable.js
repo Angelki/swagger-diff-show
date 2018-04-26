@@ -3,7 +3,7 @@ import { Table } from "antd";
 
 export default class WarningTable extends Component {
   render() {
-    const { warningMessages, created } = this.props;
+    const { warningMessages, created, dIndex } = this.props;
     const columns = [
       {
         title: "ruleId",
@@ -22,9 +22,9 @@ export default class WarningTable extends Component {
       <Table
         columns={columns}
         rowKey={record => record.ruleId}
-        dataSource={warningMessages[6]}
+        dataSource={warningMessages[dIndex]}
         bordered
-        title={() => `${created[6]}--警告`}
+        title={() => `Warnings`}
       />
     );
   }

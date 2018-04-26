@@ -3,7 +3,7 @@ import { Table } from "antd";
 
 export default class InfoTable extends Component {
   render() {
-    const { infoMessages, created } = this.props;
+    const { infoMessages, created, dIndex } = this.props;
     console.log(infoMessages[6]);
     const columns = [
       {
@@ -23,9 +23,9 @@ export default class InfoTable extends Component {
       <Table
         columns={columns}
         rowKey={record => record.ruleId}
-        dataSource={infoMessages[6]}
+        dataSource={infoMessages[dIndex]}
         bordered
-        title={() => `${created[6]}--信息`}
+        title={() => `Infos`}
       />
     );
   }

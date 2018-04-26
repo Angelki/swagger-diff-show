@@ -3,7 +3,7 @@ import { Table } from "antd";
 
 export default class UnmatchTable extends Component {
   render() {
-    const { unmatchPaths, created } = this.props;
+    const { unmatchPaths, created, dIndex } = this.props;
     // console.log(warningMessages[6]);
     const columns = [
       {
@@ -27,9 +27,9 @@ export default class UnmatchTable extends Component {
       <Table
         columns={columns}
         rowKey={record => record.kind}
-        dataSource={unmatchPaths[6]}
+        dataSource={unmatchPaths[dIndex]}
         bordered
-        title={() => `${created[6]}--不匹配的Diff`}
+        title={() => `UnmatchDiff`}
       />
     );
   }

@@ -16,7 +16,7 @@ export default class GlobalHeader extends Component {
           defaultSelectedKeys={["4"]}
           style={{ lineHeight: "64px" }}
         >
-          <Menu.Item key="4">土建平台API变更</Menu.Item>
+          <Menu.Item key="4">土建</Menu.Item>
         </Menu>
       </Header>
     );

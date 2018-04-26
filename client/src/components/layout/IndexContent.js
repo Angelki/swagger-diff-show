@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Layout } from "antd";
-import DiffList from "../DiffList/DiffList";
+import IndexList from "../DiffList/IndexList";
 
 const { Content } = Layout;
 export default class IndexContent extends Component {
@@ -9,7 +9,7 @@ export default class IndexContent extends Component {
       <Content style={{ padding: "0 50px" }}>
         <Layout style={{ padding: "24px 0", background: "#fff" }}>
           <Content style={{ padding: "0 24px", minHeight: 280 }}>
-            <DiffList />
+            <IndexList />
           </Content>
         </Layout>
       </Content>
