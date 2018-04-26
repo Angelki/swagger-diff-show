@@ -21,24 +21,24 @@ export default class DiffList extends Component {
       <div>
         <h1>{created[dataIndex]}--API变更</h1>
         <WarningTable
-          warningMessages={warningMessages}
-          created={created}
-          dIndex={dataIndex}
+          warningMessages={warningMessages[dataIndex]}
+          created={created[dataIndex]}
+          dIndex={dataIndex[dataIndex]}
         />
         <InfoTable
-          infoMessages={infoMessages}
-          created={created}
-          dIndex={dataIndex}
+          infoMessages={infoMessages[dataIndex]}
+          created={created[dataIndex]}
+          dIndex={dataIndex[dataIndex]}
         />
         <UnmatchTable
-          unmatchPaths={unmatchPaths}
-          created={created}
-          dIndex={dataIndex}
+          unmatchPaths={unmatchPaths[dataIndex]}
+          created={created[dataIndex]}
+          dIndex={dataIndex[dataIndex]}
         />
         <ErrTable
-          errorMessages={errorMessages}
-          created={created}
-          dIndex={dataIndex}
+          errorMessages={errorMessages[dataIndex]}
+          created={created[dataIndex]}
+          dIndex={dataIndex[dataIndex]}
         />
       </div>
     );

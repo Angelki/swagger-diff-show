@@ -4,7 +4,6 @@ import { Table } from "antd";
 export default class InfoTable extends Component {
   render() {
     const { infoMessages, created, dIndex } = this.props;
-    console.log(infoMessages[6]);
     const columns = [
       {
         title: "ruleId",
@@ -25,7 +24,7 @@ export default class InfoTable extends Component {
         rowKey={record => record.ruleId}
         dataSource={infoMessages[dIndex]}
         bordered
-        title={() => `Infos`}
+        title={() => <h2>Info</h2>}
       />
     );
   }

@@ -4,7 +4,6 @@ import { Table } from "antd";
 export default class ErrTable extends Component {
   render() {
     const { errorMessages, created, dIndex } = this.props;
-    // console.log(warningMessages[6]);
     const columns = [
       {
         title: "ruleId",
@@ -26,7 +25,7 @@ export default class ErrTable extends Component {
         rowKey={record => record.ruleId}
         dataSource={errorMessages[dIndex]}
         bordered
-        title={() => `Errors`}
+        title={() => <h2>Errors</h2>}
       />
     );
   }

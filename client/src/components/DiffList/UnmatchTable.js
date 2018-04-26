@@ -4,7 +4,6 @@ import { Table } from "antd";
 export default class UnmatchTable extends Component {
   render() {
     const { unmatchPaths, created, dIndex } = this.props;
-    // console.log(warningMessages[6]);
     const columns = [
       {
         title: "kind",
@@ -29,7 +28,7 @@ export default class UnmatchTable extends Component {
         rowKey={record => record.kind}
         dataSource={unmatchPaths[dIndex]}
         bordered
-        title={() => `UnmatchDiff`}
+        title={() => <h2>UnmatchDiff</h2>}
       />
     );
   }

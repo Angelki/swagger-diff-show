@@ -24,7 +24,7 @@ export default class WarningTable extends Component {
         rowKey={record => record.ruleId}
         dataSource={warningMessages[dIndex]}
         bordered
-        title={() => `Warnings`}
+        title={() => <h2> Warnings</h2>}
       />
     );
   }
