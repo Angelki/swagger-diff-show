@@ -4,7 +4,7 @@ import axios from "axios";
 import DiffList from "./DiffList";
 import "./styles.css";
 
-export default class IndexList extends Component {
+export default class CivilList extends Component {
   state = {
     infoMessages: [],
     warningMessages: [],
@@ -20,7 +20,7 @@ export default class IndexList extends Component {
 
   onAxiosList = () => {
     axios
-      .get("api/diffs/")
+      .get("api/diffs/civil")
       .then(res => {
         let infoMsg = res.data.allDiffs.map(datalist => datalist.infos);
         let warningMsg = res.data.allDiffs.map(datalist => datalist.warnings);

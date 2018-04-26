@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Layout } from "antd";
-import IndexList from "../DiffList/IndexList";
+import { Route } from "react-router-dom";
+import CivilList from "../DiffList/CivilList";
+import DecoList from "../DiffList/DecoList";
 
 const { Content } = Layout;
 export default class IndexContent extends Component {
@@ -9,7 +11,8 @@ export default class IndexContent extends Component {
       <Content style={{ padding: "0 50px" }}>
         <Layout style={{ padding: "24px 0", background: "#fff" }}>
           <Content style={{ padding: "0 24px", minHeight: 280 }}>
-            <IndexList />
+            <Route exact path="/" component={CivilList} />
+            <Route exact path="/deco" component={DecoList} />
           </Content>
         </Layout>
       </Content>

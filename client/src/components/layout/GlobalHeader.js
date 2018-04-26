@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Layout, Menu } from "antd";
+import { Link } from "react-router-dom";
 
 import "./styles.css";
 
@@ -13,10 +14,15 @@ export default class GlobalHeader extends Component {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["4"]}
+          defaultSelectedKeys={["civil"]}
           style={{ lineHeight: "64px" }}
         >
-          <Menu.Item key="4">土建</Menu.Item>
+          <Menu.Item key="civil">
+            <Link to="/">土建</Link>
+          </Menu.Item>
+          <Menu.Item key="deco">
+            <Link to="/deco">装饰</Link>
+          </Menu.Item>
         </Menu>
       </Header>
     );
