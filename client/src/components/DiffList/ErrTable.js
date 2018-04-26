@@ -22,7 +22,7 @@ export default class ErrTable extends Component {
     return (
       <Table
         columns={columns}
-        rowKey={record => record.ruleId}
+        // rowKey={record => record.message}
         dataSource={errorMessages[dIndex]}
         bordered
         title={() => <h2>Errors</h2>}

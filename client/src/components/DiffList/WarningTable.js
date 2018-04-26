@@ -21,7 +21,7 @@ export default class WarningTable extends Component {
     return (
       <Table
         columns={columns}
-        rowKey={record => record.ruleId}
+        // rowKey={record => record.ruleId}
         dataSource={warningMessages[dIndex]}
         bordered
         title={() => <h2> Warnings</h2>}

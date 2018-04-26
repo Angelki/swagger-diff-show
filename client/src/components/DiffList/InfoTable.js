@@ -21,7 +21,7 @@ export default class InfoTable extends Component {
     return (
       <Table
         columns={columns}
-        rowKey={record => record.ruleId}
+        // rowKey={record => record.message}
         dataSource={infoMessages[dIndex]}
         bordered
         title={() => <h2>Info</h2>}

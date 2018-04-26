@@ -25,7 +25,7 @@ export default class UnmatchTable extends Component {
     return (
       <Table
         columns={columns}
-        rowKey={record => record.kind}
+        // rowKey={}
         dataSource={unmatchPaths[dIndex]}
         bordered
         title={() => <h2>UnmatchDiff</h2>}
