@@ -19,17 +19,6 @@ export default class InfoTable extends Component {
         dataIndex: "path"
       }
     ];
-
-    const data = [
-      {
-        key: 1,
-        created: "xii",
-        ruleId: "tese",
-        message: "message",
-        path: "lujing",
-        property: "name"
-      }
-    ];
     return (
       <Table
         columns={columns}

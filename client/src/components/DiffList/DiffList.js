@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import WarningTable from "./WarningTable";
 import InfoTable from "./InfoTable";
+import ErrTable from "./ErrTable";
+import UnmatchTable from "./UnmatchTable";
 
 export default class DiffList extends Component {
   state = {
@@ -46,12 +48,6 @@ export default class DiffList extends Component {
       })
       .catch(err => console.log(err));
   };
-
-  // created={created}
-  // infoMessages={infoMessages}
-  // warningMessages={warningMessages}
-  // errorMessages={errorMessages}
-  // unmatchPaths={unmatchPaths}
   render() {
     const {
       created,
@@ -64,6 +60,8 @@ export default class DiffList extends Component {
       <div>
         <WarningTable warningMessages={warningMessages} created={created} />
         <InfoTable infoMessages={infoMessages} created={created} />
+        <UnmatchTable unmatchPaths={unmatchPaths} created={created} />
+        <ErrTable errorMessages={errorMessages} created={created} />
       </div>
     );
   }

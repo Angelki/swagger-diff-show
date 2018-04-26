@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Table } from "antd";
 
-export default class WarningTable extends Component {
+export default class ErrTable extends Component {
   render() {
-    const { warningMessages, created } = this.props;
-    console.log(warningMessages[6]);
+    const { errorMessages, created } = this.props;
+    // console.log(warningMessages[6]);
     const columns = [
       {
         title: "ruleId",
@@ -20,21 +20,11 @@ export default class WarningTable extends Component {
       }
     ];
 
-    const data = [
-      {
-        key: 1,
-        created: "xii",
-        ruleId: "tese",
-        message: "message",
-        path: "lujing",
-        property: "name"
-      }
-    ];
     return (
       <Table
         columns={columns}
         rowKey={record => record.ruleId}
-        dataSource={warningMessages[6]}
+        dataSource={errorMessages[6]}
         bordered
         title={() => `${created[6]}--警告`}
       />

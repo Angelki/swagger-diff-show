@@ -4,7 +4,6 @@ import { Table } from "antd";
 export default class WarningTable extends Component {
   render() {
     const { warningMessages, created } = this.props;
-    console.log(warningMessages[6]);
     const columns = [
       {
         title: "ruleId",
@@ -17,17 +16,6 @@ export default class WarningTable extends Component {
       {
         title: "path",
         dataIndex: "path"
-      }
-    ];
-
-    const data = [
-      {
-        key: 1,
-        created: "xii",
-        ruleId: "tese",
-        message: "message",
-        path: "lujing",
-        property: "name"
       }
     ];
     return (

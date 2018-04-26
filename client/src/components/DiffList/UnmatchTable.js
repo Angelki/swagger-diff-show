@@ -1,42 +1,35 @@
 import React, { Component } from "react";
 import { Table } from "antd";
 
-export default class WarningTable extends Component {
+export default class UnmatchTable extends Component {
   render() {
-    const { warningMessages, created } = this.props;
-    console.log(warningMessages[6]);
+    const { unmatchPaths, created } = this.props;
+    // console.log(warningMessages[6]);
     const columns = [
       {
-        title: "ruleId",
-        dataIndex: "ruleId"
-      },
-      {
-        title: "message",
-        dataIndex: "message"
+        title: "kind",
+        dataIndex: "kind"
       },
       {
         title: "path",
         dataIndex: "path"
-      }
-    ];
-
-    const data = [
+      },
       {
-        key: 1,
-        created: "xii",
-        ruleId: "tese",
-        message: "message",
-        path: "lujing",
-        property: "name"
+        title: "lhs",
+        dataIndex: "lhs"
+      },
+      {
+        title: "rhs",
+        dataIndex: "rhs"
       }
     ];
     return (
       <Table
         columns={columns}
-        rowKey={record => record.ruleId}
-        dataSource={warningMessages[6]}
+        rowKey={record => record.kind}
+        dataSource={unmatchPaths[6]}
         bordered
-        title={() => `${created[6]}--警告`}
+        title={() => `${created[6]}--不匹配的Diff`}
       />
     );
   }
