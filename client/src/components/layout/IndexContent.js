@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layout, Table } from "antd";
+import { Layout } from "antd";
 import DiffList from "../DiffList/DiffList";
 
 const { Content } = Layout;
