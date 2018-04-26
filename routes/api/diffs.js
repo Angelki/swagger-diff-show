@@ -15,6 +15,7 @@ router.post("/", (req, res) => {});
 router.get("/", (req, res) => {
   const filePath = path.resolve("public/diffs");
   var allDiffs = []; //所有的diff
+  var created = [];
   let files = fs.readdirSync(filePath);
 
   for (let i = 0; i < files.length; i++) {
@@ -29,9 +30,11 @@ router.get("/", (req, res) => {
     }
     var content = fs.readFileSync(filedir, "utf-8");
     allDiffs.unshift(JSON.parse(content));
+    // console.log(typeof files[i]);// 是string
+    let createdTime = files[i].slice(5, -5);
+    created.unshift(createdTime);
   }
-
-  res.json(allDiffs);
+  res.json({ allDiffs, created });
 });
 
 module.exports = router;

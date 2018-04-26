@@ -32,7 +32,7 @@ setInterval(() => {
   //
   SwaggerDiff(oldSpec, newSpec, config)
     .then(diff => {
-      console.log(JSON.stringify(diff.errors) === "[]");
+      // console.log(JSON.stringify(diff.errors) === "[]");
       if (
         JSON.stringify(diff.errors) === "[]" &&
         JSON.stringify(diff.warnings) === "[]" &&
@@ -42,7 +42,7 @@ setInterval(() => {
         return console.log("api未发生任何改变~");
       }
       const oStr = JSON.stringify(diff);
-      console.log(oStr);
+      // console.log(oStr);
       time = moment().format("LLLL");
       fs.writeFile(`public/diffs/diff_${time}.json`, oStr, err => {
         if (err) {
@@ -57,7 +57,7 @@ setInterval(() => {
       });
     })
     .catch(err => console.log(err));
-}, 1000);
+}, 3600000);
 
 // Routes
 app.use("/api/diffs", diffs);

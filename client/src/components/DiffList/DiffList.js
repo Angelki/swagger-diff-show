@@ -7,7 +7,8 @@ export default class DiffList extends Component {
     infoMessages: [],
     warningMessages: [],
     errorMessages: [],
-    unmatchPaths: []
+    unmatchPaths: [],
+    created: []
   };
 
   componentWillMount() {
@@ -19,18 +20,21 @@ export default class DiffList extends Component {
       .get("api/diffs/")
       .then(res => {
         // * msg还是数组
-        let infoMsg = res.data.map(datalist =>
+        // console.log(res.data.allDiffs);
+        let infoMsg = res.data.allDiffs.map(datalist =>
           datalist.infos.map(item => item.message)
         );
-        let warningMsg = res.data.map(datalist =>
+        let warningMsg = res.data.allDiffs.map(datalist =>
           datalist.warnings.map(item => item.message)
         );
-        let errorMsg = res.data.map(datalist =>
+        let errorMsg = res.data.allDiffs.map(datalist =>
           datalist.errors.map(item => item.message)
         );
-        let unmatchPathMsg = res.data.map(datalist =>
+        let unmatchPathMsg = res.data.allDiffs.map(datalist =>
           datalist.unmatchDiffs.map(item => item.path)
         );
+        let time = res.data.created;
+        console.log(time);
         console.log(infoMsg);
         console.log(warningMsg);
         console.log(errorMsg);
@@ -40,7 +44,8 @@ export default class DiffList extends Component {
           infoMessages: infoMsg,
           warningMessages: warningMsg,
           errorMessages: errorMsg,
-          unmatchPaths: unmatchPathMsg
+          unmatchPaths: unmatchPathMsg,
+          created: time
         });
       })
       .catch(err => console.log(err));
@@ -51,9 +56,10 @@ export default class DiffList extends Component {
       infoMessages,
       warningMessages,
       errorMessages,
-      unmatchPaths
+      unmatchPaths,
+      created
     } = this.state;
-    console.log(infoMessages);
+    // console.log(infoMessages);
     const columns = [
       {
         title: "最近五次",
@@ -81,13 +87,12 @@ export default class DiffList extends Component {
     const data = [
       {
         key: "1",
-        number: "最近",
+        number: created[0],
         infos: infoMessages[0],
         warnings: warningMessages[0],
         errors: errorMessages[0],
         unmatchDiffs: unmatchPaths[0]
       },
-
       {
         key: "2",
         number: "2",
@@ -126,9 +131,12 @@ export default class DiffList extends Component {
       <Table
         columns={columns}
         dataSource={data}
+        expandedRowRender={record => (
+          <p style={{ margin: 0 }}>{record.description}</p>
+        )}
         bordered
-        title={() => "Header"}
-        footer={() => "Footer"}
+        title={() => "土建平台API改动记录"}
+        // footer={() => "Footer"}
       />
     );
   }
